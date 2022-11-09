@@ -12,8 +12,6 @@ import {getShuffledOptions, getResult} from './game.js';
 import {
     CHALLENGE_COMMAND,
     TEST_COMMAND,
-    TEST_2_COMMAND,
-    KLASS_OR_NOTKLASS,
 } from './commands.js';
 import {
     HasGuildCommands,
@@ -21,6 +19,7 @@ import {
     HasDeleteGuildCommands,
     HasDeleteGlobalCommands,
 } from './commandsManager.js'
+import klassOrNotklass from "./commands/klassOrNotklass.js";
 
 // Create an express app
 const app = express();
@@ -38,6 +37,13 @@ const activeGames = {};
 app.post('/interactions', async function (req, res) {
     // Interaction type and data
     const {type, id, data} = req.body;
+
+
+    const applicationCommandList = {
+        'klass_or_notklass': klassOrNotklass.klassOrNotClass.applicationCommand,
+    };
+
+    const messageCommandList = []
 
 
     switch (type) {
@@ -69,7 +75,7 @@ app.post('/interactions', async function (req, res) {
                     type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
                     data: {
                         // Fetches a random emoji to send from a helper function
-                        content: `<@${userId}> trouve que c'est KLASS 👍 `,
+                        content: `<@${userId}> trouve que c'est KLASS 👍`,
                     },
                 });
             }
@@ -212,40 +218,7 @@ function applicationCommandProcess(req, res) {
         });
     }
 
-    if (name === KLASS_OR_NOTKLASS.name) {
-
-        const userId = req.body.member.user.id;
-        console.log(data);
-
-        return res.send({
-            type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-            data: {
-                // Fetches a random emoji to send from a helper function
-                content: `<@${userId}> demande si ` + data.options[0].value + ` c'est : `,
-                components: [
-                    {
-                        type: MessageComponentTypes.ACTION_ROW,
-                        components: [
-                            {
-                                type: MessageComponentTypes.BUTTON,
-                                // Append the game ID to use later on
-                                custom_id: `klass_button_${req.body.id}`,
-                                label: 'KLASS',
-                                style: ButtonStyleTypes.SUCCESS,
-                            },
-                            {
-                                type: MessageComponentTypes.BUTTON,
-                                // Append the game ID to use later on
-                                custom_id: `not_klass_button_${req.body.id}_2`,
-                                label: 'PAKLASS',
-                                style: ButtonStyleTypes.DANGER,
-                            },
-                        ],
-                    },
-                ],
-            },
-        });
-    }
+    return klassOrNotklass.klassOrNotClass.applicationCommand(req, res);
 }
 
 app.listen(PORT, () => {
@@ -255,12 +228,11 @@ app.listen(PORT, () => {
     HasGuildCommands(process.env.APP_ID, process.env.GUILD_ID, [
         TEST_COMMAND,
         CHALLENGE_COMMAND,
-        TEST_2_COMMAND,
-        KLASS_OR_NOTKLASS,
+        klassOrNotklass.klassOrNotClass.getCommand(),
     ]);
 
     HasGlobalCommands(process.env.APP_ID, [
-        KLASS_OR_NOTKLASS,
+        klassOrNotklass.klassOrNotClass.getCommand(),
     ]);
 
     HasDeleteGuildCommands(process.env.APP_ID, process.env.GUILD_ID, []);

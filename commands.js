@@ -1,5 +1,6 @@
 import {getRPSChoices} from './game.js';
 import {capitalize} from './utils.js';
+import klassOrNotKlass from "./commands/klassOrNotklass.js";
 
 // Get the game choices from game.js
 function createCommandChoices() {
@@ -34,26 +35,6 @@ export const CHALLENGE_COMMAND = {
             description: 'Pick your object',
             required: true,
             choices: createCommandChoices(),
-        },
-    ],
-    type: 1,
-};
-
-export const TEST_2_COMMAND = {
-    name: 'test2',
-    description: 'test 2',
-    type: 1,
-};
-
-export const KLASS_OR_NOTKLASS = {
-    name: 'klass_or_notklass',
-    description: 'KLASS OU PAKLASS ?',
-    options: [
-        {
-            type: 3,
-            name: 'citation',
-            description: 'cite ta question',
-            required: true,
         },
     ],
     type: 1,
