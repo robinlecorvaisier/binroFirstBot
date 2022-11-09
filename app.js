@@ -18,6 +18,7 @@ import {
 import {
     HasGuildCommands,
     HasGlobalCommands,
+    DeleteGuildCommands,
 } from './commandsInstaller.js'
 
 // Create an express app
@@ -59,7 +60,7 @@ app.post('/interactions', async function (req, res) {
             const componentId = data.custom_id;
 
 
-            if(componentId.startsWith('klass_button_')){
+            if (componentId.startsWith('klass_button_')) {
 
                 const userId = req.body.member.user.id;
 
@@ -71,7 +72,7 @@ app.post('/interactions', async function (req, res) {
                     },
                 });
             }
-            if(componentId.startsWith('not_klass_button_')){
+            if (componentId.startsWith('not_klass_button_')) {
                 const userId = req.body.member.user.id;
 
                 return res.send({
@@ -210,7 +211,7 @@ function applicationCommandProcess(req, res) {
         });
     }
 
-    if(name === KLASS_OR_NOTKLASS.name){
+    if (name === KLASS_OR_NOTKLASS.name) {
 
         const userId = req.body.member.user.id;
         console.log(data);
@@ -260,4 +261,6 @@ app.listen(PORT, () => {
     HasGlobalCommands(process.env.APP_ID, [
         KLASS_OR_NOTKLASS,
     ]);
+
+    DeleteGuildCommands(process.env.APP_ID, process.env.GUILD_ID, []);
 });
