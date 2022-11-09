@@ -14,9 +14,11 @@ import {
     TEST_COMMAND,
     TEST_2_COMMAND,
     KLASS_OR_NOTKLASS,
+} from './commands.js';
+import {
     HasGuildCommands,
     HasGlobalCommands,
-} from './commands.js';
+} from './commandsInstaller.js'
 
 // Create an express app
 const app = express();
@@ -255,7 +257,7 @@ app.listen(PORT, () => {
         KLASS_OR_NOTKLASS,
     ]);
 
-    HasGlobalCommands(process.env.APP_ID, process.env.GUILD_ID, [
+    HasGlobalCommands(process.env.APP_ID, [
         KLASS_OR_NOTKLASS,
     ]);
 });
