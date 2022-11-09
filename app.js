@@ -18,8 +18,9 @@ import {
 import {
     HasGuildCommands,
     HasGlobalCommands,
-    DeleteGuildCommands,
-} from './commandsInstaller.js'
+    HasDeleteGuildCommands,
+    HasDeleteGlobalCommands,
+} from './commandsManager.js'
 
 // Create an express app
 const app = express();
@@ -262,5 +263,7 @@ app.listen(PORT, () => {
         KLASS_OR_NOTKLASS,
     ]);
 
-    DeleteGuildCommands(process.env.APP_ID, process.env.GUILD_ID, []);
+    HasDeleteGuildCommands(process.env.APP_ID, process.env.GUILD_ID, []);
+
+    HasDeleteGlobalCommands(process.env.APP_ID, []);
 });

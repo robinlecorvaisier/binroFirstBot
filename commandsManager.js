@@ -12,10 +12,16 @@ export async function HasGlobalCommands(appId, commands) {
     commands.forEach((c) => HasCommand(getGlobalEndpoint(appId), c));
 }
 
-export async function DeleteGuildCommands(appId, guildId, commands) {
+export async function HasDeleteGuildCommands(appId, guildId, commands) {
     if (guildId === '' || appId === '' || commands.length === 0) return;
 
     commands.forEach((c) => HasDeleteCommand(getGuildEndpoint(appId, guildId), c))
+}
+
+export async function HasDeleteGlobalCommands(appId, commands) {
+    if (appId === '' || commands.length === 0) return;
+
+    commands.forEach((c) => HasDeleteCommand(getGlobalEndpoint(appId), c))
 }
 
 async function HasDeleteCommand(endpoint, command) {
