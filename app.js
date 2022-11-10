@@ -19,7 +19,7 @@ import {
     HasDeleteGuildCommands,
     HasDeleteGlobalCommands,
 } from './commandsManager.js'
-import klassOrNotklass from "./commands/klassOrNotklass.js";
+import klassOrNotklass from "./klassOrNotklass.js";
 
 // Create an express app
 const app = express();

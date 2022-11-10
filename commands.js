@@ -1,6 +1,6 @@
 import {getRPSChoices} from './game.js';
 import {capitalize} from './utils.js';
-import klassOrNotKlass from "./commands/klassOrNotklass.js";
+import klassOrNotKlass from "./klassOrNotklass.js";
 
 // Get the game choices from game.js
 function createCommandChoices() {
