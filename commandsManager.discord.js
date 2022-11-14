@@ -1,9 +1,11 @@
 import globalCommands from './commands/globalCommands/commandsIndex.js';
+import testGuildCommands from "./commands/testGuildCommands/commandsIndex.js";
 
 
 const commandsClientSetter = {
     setClientCommands: function (client) {
         setCommands(client, globalCommands.globalCommands);
+        setCommands(client, testGuildCommands.testGuildCommands);
     }
 }
 
