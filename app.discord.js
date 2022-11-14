@@ -1,7 +1,10 @@
 import {Client, Collection, Events, GatewayIntentBits} from "discord.js";
 import config from "./config.json" assert {type: 'json'};
-import * as commands from './commands/commandsIndex.js'
-import commandsManagerDiscord from "./commandsManager.discord.js";
+import globalCommands from './commands/globalCommands/commandsIndex.js';
+import testGuildCommands from './commands/testGuildCommands/commandsIndex.js';
+import commandsManagerDiscord from "./commandsApiManager.discord.js";
+import commandsSetter from "./commandsManager.discord.js";
+
 
 const client = new Client({intents: [GatewayIntentBits.Guilds]});
 
@@ -12,18 +15,7 @@ client.once(Events.ClientReady, c => {
 });
 
 client.commands = new Collection();
-
-const commandList = Object.entries(commands);
-
-commandList.forEach(function ([key, command]) {
-
-    if ('data' in command && 'execute' in command) {
-        client.commands.set(command.data.name, command);
-    } else {
-        console.log(`[WARNING] The command at ${key} is missing a required "data" or "execute" property.`);
-    }
-
-});
+commandsSetter.commandsClientSetter.setClientCommands(client);
 
 client.on(Events.InteractionCreate, async interaction => {
     if (interaction.isButton()) {
@@ -53,8 +45,8 @@ client.on(Events.InteractionCreate, async interaction => {
 // commandsManagerDiscord.commandsManagerDiscord.allTestGuildCommandDelete();
 // commandsManagerDiscord.commandsManagerDiscord.allGlobalCommandDelete();
 
-commandsManagerDiscord.commandsManagerDiscord.testGuildCommandInstall(client.commands);
-commandsManagerDiscord.commandsManagerDiscord.globalCommandInstall(client.commands);
+commandsManagerDiscord.commandsManagerDiscord.testGuildCommandInstall(testGuildCommands.testGuildCommands);
+commandsManagerDiscord.commandsManagerDiscord.globalCommandInstall(globalCommands.globalCommands);
 
 // Log in to Discord with your client's token
 client.login(config.token);

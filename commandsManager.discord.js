@@ -1,53 +1,20 @@
-import {REST, Routes} from "discord.js";
-import config from './config.json' assert {type: 'json'};
+import globalCommands from './commands/globalCommands/commandsIndex.js';
 
 
-const appId = config.appId;
-const rest = new REST({version: '10'}).setToken(config.token);
-
-const commandsManagerDiscord = {
-    guildCommandInstall: function (guildId, commands) {
-        const route = Routes.applicationGuildCommands(appId, guildId);
-        updateCommandsRequest(route, commands);
-    },
-    testGuildCommandInstall: function (commands) {
-        this.guildCommandInstall(config.testGuildId, commands);
-    },
-    globalCommandInstall: function (commands) {
-        const route = Routes.applicationCommands(appId);
-        updateCommandsRequest(route, commands);
-    },
-    allGuildCommandDelete: function (guildId) {
-        const route = Routes.applicationGuildCommands(appId, guildId);
-        deleteAllCommandsRequest(route);
-    },
-    allTestGuildCommandDelete: function () {
-        this.allGuildCommandDelete(config.testGuildId);
-    },
-    allGlobalCommandDelete: function () {
-        const route = Routes.applicationCommands(appId);
-        deleteAllCommandsRequest(route);
-    },
+const commandsClientSetter = {
+    setClientCommands: function (client) {
+        setCommands(client, globalCommands.globalCommands);
+    }
 }
 
-function updateCommandsRequest(route, commands) {
-
-    const jsonDataCommands = commands.map(command => commandDataFormatter(command));
-
-    rest.put(route, {body: jsonDataCommands})
-        .then(data => console.log(`${data.length} commands updated`))
-        .catch(error => console.error(error));
+function setCommands(client, commands) {
+    commands.forEach(function (command, key, map) {
+        if ('data' in command && 'execute' in command) {
+            client.commands.set(command.data.name, command);
+        } else {
+            console.log(`[WARNING] The command at ${key} is missing a required "data" or "execute" property.`);
+        }
+    });
 }
 
-function deleteAllCommandsRequest(route) {
-    rest.put(route, {body: []})
-        .then(data => console.log(`all commands deleted`))
-        .catch(error => console.error(error));
-}
-
-
-function commandDataFormatter(command) {
-    return command.data.toJSON();
-}
-
-export default {commandsManagerDiscord};
+export default {commandsClientSetter}
