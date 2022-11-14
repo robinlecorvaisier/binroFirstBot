@@ -26,6 +26,13 @@ commandList.forEach(function ([key, command]) {
 });
 
 client.on(Events.InteractionCreate, async interaction => {
+    if (interaction.isButton()) {
+        const commandName = interaction.message.interaction.commandName;
+        const commandButton = interaction.client.commands.get(commandName);
+        await commandButton.buttonExecute(interaction);
+    }
+
+
     if (!interaction.isChatInputCommand()) return;
 
     const command = interaction.client.commands.get(interaction.commandName);
