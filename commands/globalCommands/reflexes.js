@@ -14,7 +14,6 @@ function createChoises() {
 
 const reflexChoices = createChoises().slice(0, 24);
 
-
 export default {
     data: new SlashCommandBuilder()
         .setName('reflex')
@@ -28,15 +27,18 @@ export default {
         .addStringOption(option =>
             option
                 .setName('reflex')
-                .setDescription('choisis ton reflexe')
-                .setRequired(true)
+                .setDescription('choisis ton reflexe, vide pour random')
                 .addChoices(...reflexChoices)
         )
     ,
     execute: async function (interaction) {
-        const reflex = interaction.options.getString('reflex');
         const target = interaction.options.getUser('cible');
+        let reflex = interaction.options.getString('reflex');
 
+        if (reflex === undefined || reflex === null) {
+            const randIndex = Math.floor(Math.random() * reflexChoices.length);
+            reflex = reflexChoices[randIndex].value;
+        }
 
         const filter = function (message) {
             const messageLower = message.content.toLowerCase();
