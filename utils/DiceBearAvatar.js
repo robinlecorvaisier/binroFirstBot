@@ -2,8 +2,8 @@ const diceBearAvatar = {
     type: {
         adventurerNeutral: 'adventurer-neutral',
     },
-    getAdventureNeutralAvatar: function () {
-        return getImageUrl(this.type.adventurerNeutral, Math.random().toString(), {})
+    getAdventureNeutralAvatar: function (seed) {
+        return getImageUrl(this.type.adventurerNeutral, seed, {})
     },
 }
 

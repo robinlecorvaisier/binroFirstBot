@@ -1,4 +1,5 @@
 import {EmbedBuilder, SlashCommandBuilder} from "discord.js";
+import stringUtils from "../../utils/stringUtils.js";
 
 export default {
     data: new SlashCommandBuilder()
@@ -32,7 +33,8 @@ export default {
         ]
 
         const filter = function (message) {
-            const messageContent = message.content.toLowerCase();
+            let messageContent = message.content.toLowerCase();
+            messageContent = stringUtils.removeSpecialCharacters(messageContent);
             const messageWords = messageContent.split(' ');
             const intersection = banWords.filter(x => messageWords.includes(x));
             return intersection.length !== 0;
