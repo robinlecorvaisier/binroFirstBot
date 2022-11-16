@@ -30,14 +30,25 @@ export default {
             'non',
             'nn',
             'nan',
-        ]
+        ];
+
+        const regexMatch = banWords.map(function (banWord) {
+            return formatRegexBanWord(banWord);
+        })
 
         const filter = function (message) {
             let messageContent = message.content.toLowerCase();
             messageContent = stringUtils.removeSpecialCharacters(messageContent);
-            const messageWords = messageContent.split(' ');
-            const intersection = banWords.filter(x => messageWords.includes(x));
-            return intersection.length !== 0;
+
+            for (const regex of regexMatch) {
+                const matches = regex.exec(messageContent);
+                console.log(matches);
+                console.log(regex);
+                // if (matches !== null) {
+                //     return true;
+                // }
+            }
+            return false;
         }
 
 
@@ -79,4 +90,12 @@ function createEmbed(message, time, author) {
             {name: `Faite gaffe pour une durée de`, value: `${time} minutes`},
         )
         .setFooter({text: `${author.username} - bonne game à tous`, iconURL: author.avatarURL()})
+}
+
+function formatRegexBanWord(banWord) {
+    let chars = banWord.split('');
+    chars = chars.map(c => `${c}+`);
+    const charsJoin = chars.join("\\" + "s*");
+    const regex = `${charsJoin}`;
+    return new RegExp(regex, 'g');
 }

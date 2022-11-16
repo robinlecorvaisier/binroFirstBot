@@ -19,5 +19,3 @@ function getImageUrl(type, seed, options) {
 }
 
 export default {diceBearAvatar}
-
-
