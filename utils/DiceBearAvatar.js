@@ -1,8 +1,14 @@
+import stringUtils from "./stringUtils.js";
+
 const diceBearAvatar = {
     type: {
         adventurerNeutral: 'adventurer-neutral',
     },
     getAdventureNeutralAvatar: function (seed) {
+
+        seed = seed.split(' ').join('');
+        seed = stringUtils.removeSpecialCharacters(seed);
+
         return getImageUrl(this.type.adventurerNeutral, seed, {})
     },
 }
