@@ -2,17 +2,13 @@ import {SlashCommandBuilder} from "discord.js";
 import reflexJson from "../reflexe.json" assert {type: 'json'};
 
 
-function createChoises() {
-    const reflexList = Object.values(reflexJson);
-    return reflexList.map(function (reflex) {
-        return {
-            name: reflex.toUpperCase(),
-            value: reflex,
-        }
-    })
-}
+const reflexList = Object.values(reflexJson);
 
-const reflexChoices = createChoises().slice(0, 24);
+
+function pickRandomReflex(reflexList) {
+    const random = Math.floor(Math.random() * reflexList.length);
+    return reflexList[random];
+}
 
 export default {
     data: new SlashCommandBuilder()
@@ -24,21 +20,10 @@ export default {
                 .setDescription('celui qui devra repondre')
                 .setRequired(true)
         )
-        .addStringOption(option =>
-            option
-                .setName('reflex')
-                .setDescription('choisis ton reflexe, vide pour random')
-                .addChoices(...reflexChoices)
-        )
     ,
     execute: async function (interaction) {
         const target = interaction.options.getUser('cible');
-        let reflex = interaction.options.getString('reflex');
-
-        if (reflex === undefined || reflex === null) {
-            const randIndex = Math.floor(Math.random() * reflexChoices.length);
-            reflex = reflexChoices[randIndex].value;
-        }
+        const reflex = pickRandomReflex(reflexList);
 
         const filter = function (message) {
             const messageLower = message.content.toLowerCase();
@@ -47,7 +32,6 @@ export default {
             return scrible.equals(target) && messageLower.includes(response);
         };
 
-
         await interaction.reply(`${target} ${reflex.toUpperCase()}`);
 
         const collector = interaction.channel.createMessageCollector({
@@ -55,11 +39,9 @@ export default {
             time: 10000,
         });
 
-
         const endFunc = function (collected) {
             interaction.followUp(`${target} trop lent tokar`);
         };
-
 
         collector.on('collect', m => {
             interaction.followUp('OUEE MON POT');
