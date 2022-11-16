@@ -8,7 +8,7 @@ export default {
             option
                 .setName('time')
                 .setDescription('le temps de jeu en minutes')
-                .setMaxValue(60)
+                .setMaxValue(120)
                 .setMinValue(3)
                 .setRequired(true)
         ),
