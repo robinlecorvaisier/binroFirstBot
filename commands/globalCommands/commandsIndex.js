@@ -5,6 +5,7 @@ import {default as klassOuPaKlass} from './klassOrNotKlass.js';
 import {default as reflexe} from './reflexes.js';
 import {default as niOuiNiNon} from './NiOuiNiNon.js';
 import {default as diceAvatar} from './DiceAvatar.js';
+import {default as hogRider} from './HogRider.js';
 
 const globalCommands = new Collection();
 
@@ -13,6 +14,7 @@ globalCommands.set('klassOuPaKlass', klassOuPaKlass);
 globalCommands.set('reflexe', reflexe);
 globalCommands.set('niOuiNiNon', niOuiNiNon);
 globalCommands.set('diceAvatar', diceAvatar);
+globalCommands.set('hogRider', hogRider);
 
 export default {globalCommands};
 
