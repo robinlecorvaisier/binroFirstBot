@@ -19,8 +19,6 @@ export default {
         const author = interaction.member.user;
         const description = `Je propose une relance sérieuse du ni oui ni non où le perdant sa mère c'est une pute`;
 
-        await interaction.reply({embeds: [createEmbed(description, time, author)]});
-
         const banWords = [
             'oui',
             'ui',
@@ -32,6 +30,8 @@ export default {
             'nan',
         ];
 
+        await interaction.reply({embeds: [createEmbed(description, time, author, banWords)]});
+
         const regexMatch = banWords.map(function (banWord) {
             return formatRegexBanWord(banWord);
         })
@@ -42,11 +42,9 @@ export default {
 
             for (const regex of regexMatch) {
                 const matches = regex.exec(messageContent);
-                console.log(matches);
-                console.log(regex);
-                // if (matches !== null) {
-                //     return true;
-                // }
+                if (matches !== null) {
+                    return true;
+                }
             }
             return false;
         }
@@ -79,7 +77,7 @@ export default {
 }
 
 
-function createEmbed(message, time, author) {
+function createEmbed(message, time, author, banWords) {
     return new EmbedBuilder()
         .setColor(0x0099FF)
         .setTitle(`NI OUI NI NON`)
@@ -88,6 +86,7 @@ function createEmbed(message, time, author) {
         .setImage('https://cdn.discordapp.com/attachments/1039486229349138522/1042031617763463268/relance_ni_oui_ni_non.png')
         .addFields(
             {name: `Faite gaffe pour une durée de`, value: `${time} minutes`},
+            {name: `Il ne faut pas dire : `, value: `${banWords.join(', ')}`},
         )
         .setFooter({text: `${author.username} - bonne game à tous`, iconURL: author.avatarURL()})
 }
@@ -96,6 +95,6 @@ function formatRegexBanWord(banWord) {
     let chars = banWord.split('');
     chars = chars.map(c => `${c}+`);
     const charsJoin = chars.join("\\" + "s*");
-    const regex = `${charsJoin}`;
+    const regex = `\\b${charsJoin}(?![a-zA-Z])`;
     return new RegExp(regex, 'g');
 }

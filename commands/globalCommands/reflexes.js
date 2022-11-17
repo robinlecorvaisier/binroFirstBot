@@ -24,10 +24,10 @@ export default {
     execute: async function (interaction) {
         const target = interaction.options.getUser('cible');
         const reflex = pickRandomReflex(reflexList);
+        const response = reflexJson[reflex].toLowerCase();
 
         const filter = function (message) {
             const messageLower = message.content.toLowerCase();
-            const response = reflexJson[reflex].toLowerCase();
             const scrible = message.member.user;
             return scrible.equals(target) && messageLower.includes(response);
         };
@@ -40,7 +40,11 @@ export default {
         });
 
         const endFunc = function (collected) {
-            interaction.followUp(`${target} trop lent tokar`);
+            interaction.followUp(`${target} NAAN SALMERD T TROP LENT`).then(() => {
+                setTimeout(() => {
+                    interaction.channel.send(`ct **${response.toUpperCase()}** ki falai dir`);
+                }, 2000);
+            });
         };
 
         collector.on('collect', m => {
