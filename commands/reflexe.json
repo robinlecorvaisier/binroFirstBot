@@ -30,5 +30,7 @@
   "WINDO": "MACDO",
   "MACDO": "WINDO",
   "DOMAJ": "DOMAC",
-  "DOMAC": "DOMAJ"
+  "DOMAC": "DOMAJ",
+  "CHERTRO": "RETRO",
+  "RETRO": "CHERTRO"
 }
