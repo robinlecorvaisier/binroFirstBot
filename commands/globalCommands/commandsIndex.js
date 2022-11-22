@@ -7,6 +7,7 @@ import {default as niOuiNiNon} from './NiOuiNiNon.js';
 import {default as diceAvatar} from './DiceAvatar.js';
 import {default as hogRider} from './HogRider.js';
 import {default as voice} from './voice.js';
+import {default as echo} from './echo.js';
 
 const globalCommands = new Collection();
 
@@ -17,6 +18,7 @@ globalCommands.set('niOuiNiNon', niOuiNiNon);
 globalCommands.set('diceAvatar', diceAvatar);
 globalCommands.set('hogRider', hogRider);
 globalCommands.set('voice', voice);
+globalCommands.set('echo', echo);
 
 export default {globalCommands};
 

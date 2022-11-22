@@ -5,6 +5,7 @@ import testGuildCommands from './commands/testGuildCommands/commandsIndex.js';
 import commandsManagerDiscord from "./commandsApiManager.discord.js";
 import commandsSetter from "./commandsManager.discord.js";
 import numberUtils from "./utils/numberUtils.js";
+import {generateDependencyReport} from "@discordjs/voice";
 
 
 const client = new Client({
@@ -13,8 +14,11 @@ const client = new Client({
         GatewayIntentBits.GuildMessages,
         GatewayIntentBits.MessageContent,
         GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.GuildVoiceStates,
     ]
 });
+
+console.log(generateDependencyReport())
 
 // When the client is ready, run this code (only once)
 // We use 'c' for the event parameter to keep it separate from the already defined 'client'
@@ -30,8 +34,8 @@ client.on(Events.InteractionCreate, async interaction => {
     const banList = [
         // '395614947620683797', // moi
         // '188740003147415552', // jade
-        '737360899324772473', // menzo
-        '239490212776902657', // Fi
+        // '737360899324772473', // menzo
+        // '239490212776902657', // Fi
         '609877301831925760', // princesse
     ];
 
@@ -44,6 +48,7 @@ client.on(Events.InteractionCreate, async interaction => {
         "parle a mon cul",
         "atten tu as le droit de me parler ?",
         "Oh noooo, anyway",
+        "kestu veu ke jtediz",
     ];
 
 
