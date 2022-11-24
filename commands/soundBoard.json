@@ -3,18 +3,26 @@
     "cheh",
     "tg",
     "salmoman",
-    "menfou"
+    "menfou",
+    "weeb",
+    "neco"
   ],
   "sounds": {
     "cheh": [
       "https://cdn.discordapp.com/attachments/916384449975947284/916384731745124372/cheh-de-ouf.mp4",
       "https://cdn.discordapp.com/attachments/916384449975947284/1008709591741235281/cheh_sumerien.mp4",
-      "https://cdn.discordapp.com/attachments/916139941577228298/917232520712552478/cheh.mp4"
+      "https://cdn.discordapp.com/attachments/916139941577228298/917232520712552478/cheh.mp4",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045397755469774938/cheh-maskey.mp3"
     ],
     "tg": [
       "https://cdn.discordapp.com/attachments/916116126977638423/1042084184107257876/ferme_ta_gueule.mp3",
       "https://cdn.discordapp.com/attachments/918273775240347669/918273915829243904/FedyMhamdi_RenardA9Queues.mp4",
-      "https://cdn.discordapp.com/attachments/916139941577228298/934180264270250064/d7vcx8.mp4"
+      "https://cdn.discordapp.com/attachments/916139941577228298/934180264270250064/d7vcx8.mp4",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045397755767574578/fanta-ta-geule.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045397756619018341/raconte-pas-ta-vie-fdp.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045397756925186108/ta-gueule_6iavH8Q.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045397757214605352/tgtpenible.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045397757562736720/toi-taire-ta-gueule.mp3"
     ],
     "salmoman": [
       "https://cdn.discordapp.com/attachments/932614417252778014/932614456255578172/ct_vraiment_un_sale_moment.mp4"
@@ -22,7 +30,30 @@
     "menfou": [
       "https://cdn.discordapp.com/attachments/963473066652995584/963473135691264051/sureiontcar.mov",
       "https://cdn.discordapp.com/attachments/918273775240347669/920448002831814717/nigga_its_crazy.mov",
-      "https://cdn.discordapp.com/attachments/916139941577228298/917227488957059122/on_sen_branle.mp4"
+      "https://cdn.discordapp.com/attachments/916139941577228298/917227488957059122/on_sen_branle.mp4",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045397756048576604/kaaris-jmen-bat-les-couilles-frere.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045397756325412864/men-bats-les-couilles.mp3"
+    ],
+    "weeb": [
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045401955805184090/youtube-uwuuuuu.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045401956102967388/iroha_senppai.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045401956467888239/nya_ZtXOXLx.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045401956765679636/nyaa-3.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045401957050880020/nyanpass_2.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045401957336109267/screenrecord_2015-06-17-19-00-59.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045401957818450021/sugoi-sugoi.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045401990466895982/im-mp3cut.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045401990836011128/4k-ehe-te-nandayo-paimon-green-screen-update.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045401991158964295/ara-ara.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045401991460945992/arigatoa.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045401991817469962/cute-uwu.mp3"
+    ],
+    "neco": [
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045402712294035466/neco-arc-dori.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045402712713478206/neco-arc-pretty-boy.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045402713158062201/neco-arc-sound-effect.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045402713535561821/neco-arc-yanyan-yaan.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045402713875288134/racist-neco-arc-sound-effect.mp3"
     ]
   }
 }
