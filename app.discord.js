@@ -4,8 +4,8 @@ import globalCommands from './commands/globalCommands/commandsIndex.js';
 import testGuildCommands from './commands/testGuildCommands/commandsIndex.js';
 import commandsManagerDiscord from "./commandsApiManager.discord.js";
 import commandsSetter from "./commandsManager.discord.js";
-import numberUtils from "./utils/numberUtils.js";
 import {generateDependencyReport} from "@discordjs/voice";
+import banUserManager from "./utils/banUserManager.js";
 
 
 const client = new Client({
@@ -31,30 +31,14 @@ commandsSetter.commandsClientSetter.setClientCommands(client);
 
 client.on(Events.InteractionCreate, async interaction => {
 
-    const banList = [
-        // '395614947620683797', // moi
-        // '188740003147415552', // jade
-        // '737360899324772473', // menzo
-        // '239490212776902657', // Fi
-        '609877301831925760', // princesse
-    ];
+    const interactionUser = interaction.member.user;
 
-    const banMessages = [
-        "niktamer toi",
-        "manj tai mort",
-        "va jouer avec un autre bot",
-        "hmmm jmen fou, jle ferai pas",
-        "va te fer metr plutot",
-        "parle a mon cul",
-        "atten tu as le droit de me parler ?",
-        "Oh noooo, anyway",
-        "kestu veu ke jtediz",
-    ];
+    const banUserManagerInstance = banUserManager.banUserManager;
+    // banUserManagerInstance.addUserToTheBanList(interactionUser, 5000);
 
-
-    if (banList.includes(interaction.member.user.id)) {
-
-        const message = banMessages[numberUtils.getRandomInt(0, banMessages.length)];
+    if (banUserManagerInstance.isUserBan(interactionUser)) {
+        const message = banUserManager.banUserManager.getBanMessage();
+        console.log(`${interactionUser.username} tried to ${interaction.commandName} at ${new Date()}`);
         interaction.reply({content: message, ephemeral: true});
         return;
     }
