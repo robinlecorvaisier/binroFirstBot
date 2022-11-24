@@ -2,17 +2,26 @@
   "categories": [
     "cheh",
     "tg",
-    "salmoman"
+    "salmoman",
+    "menfou"
   ],
   "sounds": {
     "cheh": [
-      "https://cdn.discordapp.com/attachments/916384449975947284/916384731745124372/cheh-de-ouf.mp4"
+      "https://cdn.discordapp.com/attachments/916384449975947284/916384731745124372/cheh-de-ouf.mp4",
+      "https://cdn.discordapp.com/attachments/916384449975947284/1008709591741235281/cheh_sumerien.mp4",
+      "https://cdn.discordapp.com/attachments/916139941577228298/917232520712552478/cheh.mp4"
     ],
     "tg": [
-      "https://cdn.discordapp.com/attachments/916116126977638423/1042084184107257876/ferme_ta_gueule.mp3"
+      "https://cdn.discordapp.com/attachments/916116126977638423/1042084184107257876/ferme_ta_gueule.mp3",
+      "https://cdn.discordapp.com/attachments/918273775240347669/918273915829243904/FedyMhamdi_RenardA9Queues.mp4",
+      "https://cdn.discordapp.com/attachments/916139941577228298/934180264270250064/d7vcx8.mp4"
     ],
     "salmoman": [
       "https://cdn.discordapp.com/attachments/932614417252778014/932614456255578172/ct_vraiment_un_sale_moment.mp4"
+    ],
+    "menfou": [
+      "https://cdn.discordapp.com/attachments/963473066652995584/963473135691264051/sureiontcar.mov",
+      "https://cdn.discordapp.com/attachments/918273775240347669/920448002831814717/nigga_its_crazy.mov"
     ]
   }
 }
