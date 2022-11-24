@@ -1,5 +1,5 @@
 {
-  "banMessages" : [
+  "banMessages": [
     "niktamer toi",
     "manj tai mort",
     "va jouer avec un autre bot",
@@ -10,5 +10,8 @@
     "Oh noooo, anyway",
     "kestu veu ke jtediz",
     "tu n'as pas le droit à une conversation"
+  ],
+  "banManagers": [
+    "395614947620683797"
   ]
 }

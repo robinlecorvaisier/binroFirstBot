@@ -20,6 +20,15 @@ const banUser = {
         )
     ,
     execute: async function (interaction) {
+        const userInteraction = interaction.member.user;
+        if (!banUserManager.banUserManager.isUserBanManager(userInteraction)) {
+            await interaction.reply({
+                content: 't ki pour fair sa ?',
+                ephemeral: true
+            });
+            return;
+        }
+
         const user = interaction.options.getUser('user');
         const duration = interaction.options.getNumber('duration');
 
@@ -51,6 +60,14 @@ const unbanUser = {
         )
     ,
     execute: async function (interaction) {
+        const userInteraction = interaction.member.user;
+        if (!banUserManager.banUserManager.isUserBanManager(userInteraction)) {
+            await interaction.reply({
+                content: 't ki pour fair sa ?',
+                ephemeral: true
+            });
+            return;
+        }
         const user = interaction.options.getUser('user');
 
         const res = banUserManager.banUserManager.freeUserFromTheBanList(user);

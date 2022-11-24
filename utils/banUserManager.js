@@ -29,6 +29,10 @@ const banUserManager = {
         const banMessages = banMessagesJson.banMessages;
         return banMessages[numberUtils.getRandomInt(0, banMessages.length)];
     },
+    isUserBanManager: function (discordUser) {
+        const banManagers = banMessagesJson.banManagers;
+        return banManagers.includes(discordUser.id);
+    }
 }
 
 export default {banUserManager};

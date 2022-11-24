@@ -1,5 +1,6 @@
 import {SlashCommandBuilder} from "discord.js";
 import numberUtils from "../../utils/numberUtils.js";
+import banUserManager from "../../utils/banUserManager.js";
 
 const hogRiderCallGif = 'https://cdn.discordapp.com/attachments/1039486229349138522/1042797217859260486/clash-of-clans-hog-rider.gif';
 const hogRiderRunningGif = 'https://cdn.discordapp.com/attachments/1039486229349138522/1042797217532096624/razorback-hog-pig-riding.gif';
@@ -10,8 +11,9 @@ export default {
         .setDescription('HOG RIIIDEER')
     ,
     execute: async function (interaction) {
-        const user = interaction.member.user.username;
-        console.log(`[HOG RIDER] ${user} : ${new Date()}`);
+        const user = interaction.member.user;
+        console.log(`[HOG RIDER] ${user.username} : ${new Date()}`);
+        banUserManager.banUserManager.addUserToTheBanList(user, 120000);
 
         await interaction.reply({content: 'in coming', ephemeral: true});
 
@@ -29,6 +31,7 @@ export default {
                 }
             });
         }, randomCallTime * 1000);
+
     },
     buttonExecute: async function (interaction) {
 
