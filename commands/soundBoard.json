@@ -7,7 +7,10 @@
     "weeb",
     "neco",
     "fart",
-    "elite"
+    "elite",
+    "troll",
+    "stress",
+    "jcp"
   ],
   "sounds": {
     "cheh": [
@@ -79,6 +82,18 @@
       "https://cdn.discordapp.com/attachments/1045397718190800988/1045417713536872538/a_HSMXsiW.mp3",
       "https://cdn.discordapp.com/attachments/1045397718190800988/1045417713796923412/hahahahahahaha_Dm8A0IC.mp3",
       "https://cdn.discordapp.com/attachments/1045397718190800988/1045417714111479908/waagh.mp3"
+    ],
+    "troll": [
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045454989688045638/discord-spam.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045454990329774221/discord-call-sound.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045454990665322637/discord-notification.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045454990011011163/vibrate.mp3"
+    ],
+    "stress": [
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045455799574609920/crazy-realistic-knocking-sound-troll-twitch-streamers_small.mp3"
+    ],
+    "jcp": [
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045457117185847326/excuse-moi-taurais-pas-un-zob-dans-lcul.mp3"
     ]
   }
 }
