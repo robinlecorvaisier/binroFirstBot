@@ -5,14 +5,17 @@
     "salmoman",
     "menfou",
     "weeb",
-    "neco"
+    "neco",
+    "fart",
+    "elite"
   ],
   "sounds": {
     "cheh": [
       "https://cdn.discordapp.com/attachments/916384449975947284/916384731745124372/cheh-de-ouf.mp4",
       "https://cdn.discordapp.com/attachments/916384449975947284/1008709591741235281/cheh_sumerien.mp4",
       "https://cdn.discordapp.com/attachments/916139941577228298/917232520712552478/cheh.mp4",
-      "https://cdn.discordapp.com/attachments/1045397718190800988/1045397755469774938/cheh-maskey.mp3"
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045397755469774938/cheh-maskey.mp3",
+      "https://cdn.discordapp.com/attachments/932614417252778014/988567210786164736/dans_le_derch.mp4"
     ],
     "tg": [
       "https://cdn.discordapp.com/attachments/916116126977638423/1042084184107257876/ferme_ta_gueule.mp3",
@@ -46,7 +49,15 @@
       "https://cdn.discordapp.com/attachments/1045397718190800988/1045401990836011128/4k-ehe-te-nandayo-paimon-green-screen-update.mp3",
       "https://cdn.discordapp.com/attachments/1045397718190800988/1045401991158964295/ara-ara.mp3",
       "https://cdn.discordapp.com/attachments/1045397718190800988/1045401991460945992/arigatoa.mp3",
-      "https://cdn.discordapp.com/attachments/1045397718190800988/1045401991817469962/cute-uwu.mp3"
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045401991817469962/cute-uwu.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045410739101368402/nico_nico_nii.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045411112998420500/onii-chan-i-have-a.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045442359191670795/lisa_ara_ara_normalized_lGdXcjK.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045443205174403182/yamate-kudesai.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045443205585440830/baka_2.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045443205933580379/nii-nii-no-baka.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045443206281699409/varien_baaaaka.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045443206608850974/megumu-yamerooo.mp3"
     ],
     "neco": [
       "https://cdn.discordapp.com/attachments/1045397718190800988/1045402712294035466/neco-arc-dori.mp3",
@@ -54,6 +65,20 @@
       "https://cdn.discordapp.com/attachments/1045397718190800988/1045402713158062201/neco-arc-sound-effect.mp3",
       "https://cdn.discordapp.com/attachments/1045397718190800988/1045402713535561821/neco-arc-yanyan-yaan.mp3",
       "https://cdn.discordapp.com/attachments/1045397718190800988/1045402713875288134/racist-neco-arc-sound-effect.mp3"
+    ],
+    "fart": [
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045412215085346816/perfect-fart.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045412215362166924/09037.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045412215731277884/dry-fart.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045412216062615652/fart-two.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045412216343646208/fart-with-extra-reverb.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045412847359889479/mario-meme.mp3"
+    ],
+    "elite": [
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045417713247453214/woboba.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045417713536872538/a_HSMXsiW.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045417713796923412/hahahahahahaha_Dm8A0IC.mp3",
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045417714111479908/waagh.mp3"
     ]
   }
 }
