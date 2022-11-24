@@ -1,0 +1,18 @@
+{
+  "categories": [
+    "cheh",
+    "tg",
+    "salmoman"
+  ],
+  "sounds": {
+    "cheh": [
+      "https://cdn.discordapp.com/attachments/916384449975947284/916384731745124372/cheh-de-ouf.mp4"
+    ],
+    "tg": [
+      "https://cdn.discordapp.com/attachments/916116126977638423/1042084184107257876/ferme_ta_gueule.mp3"
+    ],
+    "salmoman": [
+      "https://cdn.discordapp.com/attachments/932614417252778014/932614456255578172/ct_vraiment_un_sale_moment.mp4"
+    ]
+  }
+}
