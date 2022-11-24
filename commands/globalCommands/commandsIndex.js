@@ -19,7 +19,7 @@ globalCommands.set('reflexe', reflexe);
 globalCommands.set('niOuiNiNon', niOuiNiNon);
 globalCommands.set('diceAvatar', diceAvatar);
 globalCommands.set('hogRider', hogRider);
-globalCommands.set('voice', voice);
+// globalCommands.set('voice', voice);
 globalCommands.set('echo', echo);
 globalCommands.set('banUser', banUser);
 globalCommands.set('unbanUser', unbanUser);
