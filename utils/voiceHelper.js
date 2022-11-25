@@ -29,7 +29,10 @@ const voiceHelper = {
             return false;
         }
 
-        const resource = createAudioResource(resourceUrl);
+        const resource = createAudioResource(resourceUrl, {
+            inlineVolume: true,
+        });
+        resource.volume.setVolume(0.5);
         const subscribe = connection.subscribe(player);
         player.play(resource);
 
