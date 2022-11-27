@@ -10,7 +10,9 @@
     "elite",
     "troll",
     "stress",
-    "jcp"
+    "jcp",
+    "t nul",
+    "ta daronne"
   ],
   "sounds": {
     "cheh": [
@@ -28,7 +30,9 @@
       "https://cdn.discordapp.com/attachments/1045397718190800988/1045397756619018341/raconte-pas-ta-vie-fdp.mp3",
       "https://cdn.discordapp.com/attachments/1045397718190800988/1045397756925186108/ta-gueule_6iavH8Q.mp3",
       "https://cdn.discordapp.com/attachments/1045397718190800988/1045397757214605352/tgtpenible.mp3",
-      "https://cdn.discordapp.com/attachments/1045397718190800988/1045397757562736720/toi-taire-ta-gueule.mp3"
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045397757562736720/toi-taire-ta-gueule.mp3",
+      "https://www.myinstants.com/media/sounds/the-kairi-78-mais-tu-va-la-fermer-ta-gueule.mp3",
+      "https://www.myinstants.com/media/sounds/tk78-mais-quesque-tu-baraguine-sale-fdp-tes-sah-dans-ce-que-tu-dit.mp3"
     ],
     "salmoman": [
       "https://cdn.discordapp.com/attachments/932614417252778014/932614456255578172/ct_vraiment_un_sale_moment.mp4"
@@ -93,7 +97,27 @@
       "https://cdn.discordapp.com/attachments/1045397718190800988/1045455799574609920/crazy-realistic-knocking-sound-troll-twitch-streamers_small.mp3"
     ],
     "jcp": [
-      "https://cdn.discordapp.com/attachments/1045397718190800988/1045457117185847326/excuse-moi-taurais-pas-un-zob-dans-lcul.mp3"
+      "https://cdn.discordapp.com/attachments/1045397718190800988/1045457117185847326/excuse-moi-taurais-pas-un-zob-dans-lcul.mp3",
+      "https://www.myinstants.com/media/sounds/hugooo.mp3",
+      "https://www.myinstants.com/media/sounds/pub-carglass-1.mp3",
+      "https://www.myinstants.com/media/sounds/rick-rolled-meme-aetrim1602054550919.mp3"
+    ],
+    "t nul": [
+      "https://www.myinstants.com/media/sounds/movie_1.mp3",
+      "https://www.myinstants.com/media/sounds/c_nul_homer.mp3",
+      "https://www.myinstants.com/media/sounds/roblox-death-sound_1.mp3",
+      "https://www.myinstants.com/media/sounds/steve-old-hurt-sound_XKZxUk4.mp3",
+      "https://www.myinstants.com/media/sounds/zemmour-tousse.mp3",
+      "https://www.myinstants.com/media/sounds/quack_5.mp3",
+      "https://www.myinstants.com/media/sounds/directed-by-robert-b_voI2Z4T.mp3",
+      "https://www.myinstants.com/media/sounds/sa-marche-pas-tk78.mp3"
+    ],
+    "ta daronne": [
+      "https://www.myinstants.com/media/sounds/tut-tut-fils-de-pute.mp3",
+      "https://www.myinstants.com/media/sounds/maskey-motus-fdp.mp3",
+      "https://www.myinstants.com/media/sounds/fils_de_pute_ma_lumiere-tk78.mp3",
+      "https://www.myinstants.com/media/sounds/nounours_salope.mp3",
+      "https://cdn.discordapp.com/attachments/917873316050632735/944156341906329600/petit-fils-de-pute.mp4"
     ]
   }
 }
