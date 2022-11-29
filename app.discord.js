@@ -6,6 +6,8 @@ import commandsManagerDiscord from "./commandsApiManager.discord.js";
 import commandsSetter from "./commandsManager.discord.js";
 import {generateDependencyReport} from "@discordjs/voice";
 import banUserManager from "./utils/banUserManager.js";
+import {loggerInterface} from "./services/loggers/LoggerInterface.js";
+import {loggerConsole} from "./services/loggers/loggerConsole.js";
 
 
 const client = new Client({
@@ -29,9 +31,13 @@ client.once(Events.ClientReady, c => {
 client.commands = new Collection();
 commandsSetter.commandsClientSetter.setClientCommands(client);
 
+loggerInterface.create(loggerConsole);
+
 client.on(Events.InteractionCreate, async interaction => {
 
     const interactionUser = interaction.member.user;
+
+    loggerInterface.logInfo(`[info] ${interactionUser.username} use ${interaction.commandName} at ${new Date()}`);
 
     const banUserManagerInstance = banUserManager.banUserManager;
     // banUserManagerInstance.addUserToTheBanList(interactionUser, 5000);

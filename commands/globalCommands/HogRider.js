@@ -13,7 +13,7 @@ export default {
     execute: async function (interaction) {
         const user = interaction.member.user;
         console.log(`[HOG RIDER] ${user.username} : ${new Date()}`);
-        banUserManager.banUserManager.addUserToTheBanList(user, 120000);
+        // banUserManager.banUserManager.addUserToTheBanList(user, 120000);
 
         await interaction.reply({content: 'in coming', ephemeral: true});
 
