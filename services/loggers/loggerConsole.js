@@ -1,5 +1,5 @@
 const loggerConsole = {
-    logInfo: function (message){
+    insertLog: function (message){
         console.log(message);
     }
 }

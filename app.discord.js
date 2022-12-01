@@ -6,9 +6,10 @@ import commandsManagerDiscord from "./commandsApiManager.discord.js";
 import commandsSetter from "./commandsManager.discord.js";
 import {generateDependencyReport} from "@discordjs/voice";
 import banUserManager from "./utils/banUserManager.js";
-import {loggerInterface} from "./services/loggers/LoggerInterface.js";
+import {loggerService} from "./services/loggers/LoggerService.js";
 import {loggerConsole} from "./services/loggers/loggerConsole.js";
 
+loggerService.create(loggerConsole);
 
 const client = new Client({
     intents: [
@@ -20,31 +21,29 @@ const client = new Client({
     ]
 });
 
-console.log(generateDependencyReport())
+// console.log(generateDependencyReport())
 
 // When the client is ready, run this code (only once)
 // We use 'c' for the event parameter to keep it separate from the already defined 'client'
 client.once(Events.ClientReady, c => {
-    console.log(`Ready! Logged in as ${c.user.tag} : ${new Date()}`);
+    loggerService.logInfo(`Ready! Logged in as ${c.user.tag}`);
 });
 
 client.commands = new Collection();
 commandsSetter.commandsClientSetter.setClientCommands(client);
 
-loggerInterface.create(loggerConsole);
 
 client.on(Events.InteractionCreate, async interaction => {
 
     const interactionUser = interaction.member.user;
 
-    loggerInterface.logInfo(`[info] ${interactionUser.username} use ${interaction.commandName} at ${new Date()}`);
-
+    loggerService.logInfo(`${interactionUser.username} use ${interaction.commandName}`);
     const banUserManagerInstance = banUserManager.banUserManager;
     // banUserManagerInstance.addUserToTheBanList(interactionUser, 5000);
 
     if (banUserManagerInstance.isUserBan(interactionUser)) {
         const message = banUserManager.banUserManager.getBanMessage();
-        console.log(`${interactionUser.username} tried to ${interaction.commandName} at ${new Date()}`);
+        loggerService.logInfo(`Ban user ${interactionUser.username} tried to ${interaction.commandName}`);
         interaction.reply({content: message, ephemeral: true});
         return;
     }
@@ -62,6 +61,7 @@ client.on(Events.InteractionCreate, async interaction => {
     const command = interaction.client.commands.get(interaction.commandName);
 
     if (!command) {
+        loggerService.logWarning(`${interactionUser.username} tried to use ${interaction.commandName} that doesnt exist`);
         console.error(`No command matching ${interaction.commandName} was found.`);
         return;
     }
@@ -69,6 +69,7 @@ client.on(Events.InteractionCreate, async interaction => {
     try {
         await command.execute(interaction);
     } catch (error) {
+        loggerService.logError(`${interactionUser.username} used ${interaction.commandName} and proc an error`);
         console.error(error);
         await interaction.reply({content: 'There was an error while executing this command!', ephemeral: true});
     }
